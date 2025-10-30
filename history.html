@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Scan History - SecureGuard Antivirus</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>🕒 Scan History</h1>
+    <a href="/" class="back-btn">← Back to Home</a>
+    {% if history %}
+    <table>
+      <tr><th>File</th><th>Size</th><th>Status</th><th>Scanned On</th></tr>
+      {% for h in history %}
+      <tr>
+        <td>{{ h.file }}</td>
+        <td>{{ h.size }}</td>
+        <td>{{ h.status }}</td>
+        <td>{{ h.scanned_on }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% else %}
+    <p>No scans performed yet.</p>
+    {% endif %}
+  </div>
+</body>
+</html>

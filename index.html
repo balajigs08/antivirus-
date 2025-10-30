@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SecureGuard Antivirus</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script>
+    async function startScan() {
+      let progress = 0;
+      const bar = document.getElementById("progress");
+      const text = document.getElementById("progress-text");
+      bar.style.width = "0%";
+      text.innerText = "Starting scan...";
+
+      let interval = setInterval(() => {
+        progress += Math.floor(Math.random() * 10) + 1;
+        if (progress > 100) progress = 100;
+        bar.style.width = progress + "%";
+        text.innerText = progress + "% Scanned";
+        if (progress >= 100) clearInterval(interval);
+      }, 200);
+
+      setTimeout(() => document.getElementById("scanForm").submit(), 2500);
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>🛡 SecureGuard Antivirus</h1>
+    <p>AI-powered Malware Detection System</p>
+
+    <button class="history-btn" onclick="window.location.href='/history'">⏱ View Scan History</button>
+
+    <form id="scanForm" action="/scan" method="POST" enctype="multipart/form-data" onsubmit="event.preventDefault(); startScan();">
+      <input type="file" name="file" required><br><br>
+      <button type="submit" class="scan-btn">Start Scan</button>
+    </form>
+
+    <div class="progress-bar">
+      <div id="progress"></div>
+      <p id="progress-text"></p>
+    </div>
+
+    {% if scanned %}
+    <div class="result">
+      <h3>✅ Scan Complete</h3>
+      <p><b>File:</b> {{ filename }}</p>
+      <p><b>Size:</b> {{ size }} KB</p>
+      <p><b>Status:</b> {{ status }}</p>
+      <p><b>Scanned On:</b> {{ scan_time }}</p>
+
+      <div class="stats">
+        <div>Total<br>{{ total }}</div>
+        <div>Clean<br>{{ clean }}</div>
+        <div>Threats<br>{{ threats }}</div>
+      </div>
+
+      <a href="/download_report" class="report-btn">⬇ Download Report</a>
+    </div>
+    {% endif %}
+
+    <footer>SecureGuard Antivirus © 2025 | Developed by Balaji GS</footer>
+  </div>
+</body>
+</html>

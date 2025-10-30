@@ -1,0 +1,115 @@
+body {
+    background: radial-gradient(circle, #0b1733, #000);
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+  }
+  
+  .container {
+    max-width: 500px;
+    margin: 60px auto;
+    background: rgba(255,255,255,0.05);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,255,255,0.3);
+  }
+  
+  h1 { color: #4dd0e1; }
+  
+  button, .scan-btn, .report-btn, .back-btn, .history-btn {
+    background: #4dd0e1;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .report-btn{
+    background : #4caf50;
+    color: #fff;
+  }  
+  
+  button:hover, .scan-btn:hover, .back-btn:hover, .history-btn:hover {
+    background: #00bcd4;
+  }
+  
+  input[type=file] {
+    background: #111;
+    padding: 8px;
+    border-radius: 8px;
+    color: #ccc;
+    margin-top: 10px;
+  }
+  
+  .progress-bar {
+    background: #111;
+    border-radius: 8px;
+    margin: 20px 0;
+    height: 20px;
+    width: 100%;
+    position: relative;
+  }
+  
+  #progress {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #00bcd4, #4dd0e1);
+    border-radius: 8px;
+    transition: width 0.3s;
+  }
+  
+  #progress-text {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #aaa;
+  }
+  
+  .result {
+    background: rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 15px;
+    margin-top: 10px;
+  }
+  
+  .stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0 25px 0; /* Added bottom gap */
+  }
+  
+  .stats div {
+    background: #1c2a44;
+    border-radius: 10px;
+    padding: 10px;
+    width: 70px;
+  }
+  
+  /* 🧩 Added spacing below stats before Download Report button */
+  .download-container {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  footer {
+    margin-top: 25px;
+    font-size: 13px;
+    color: #999;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    border: 1px solid #333;
+    padding: 8px;
+    font-size: 14px;
+  }
+  
+  th { background: #1c2a44; }
