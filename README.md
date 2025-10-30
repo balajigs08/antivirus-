@@ -30,5 +30,4 @@ Tech Stack
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/balajigs08/antivirus.git
-   cd antivirus
+   https://github.com/balajigs08/antivirus-
