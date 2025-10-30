@@ -25,9 +25,6 @@ Tech Stack
 - Reports: Auto-generated text reports  
 
 
-📸 Screenshot
-![SecureGuard Antivirus UI](link_to_screenshot_if_you_upload_it_on_github)
-
 
 ⚙ Setup Instructions
 
